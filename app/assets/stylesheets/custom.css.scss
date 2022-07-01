@@ -2,7 +2,7 @@
 .navbar {
 
 background-color: #FDF6EA !important;
-
+margin-bottom: 1em;
 }
 
  
@@ -14,4 +14,25 @@ font-size: 2rem;
 }
 
  
+.search-area {
 
+padding: 1em;
+margin-top: 6em;
+background-color: #FDF6EA !important;
+margin-bottom: 1em;
+
+}
+
+.no-right-padding {
+    padding-right: 0;
+}
+
+.card {
+    display: inline-block;
+}
+
+.results-block {
+    
+    display: inline-block;
+    
+}
