@@ -9,12 +9,21 @@
             <li class="nav-item">
               <%= link_to 'My Portfolio', my_portfolio_path, class: 'nav-link' %>
             </li>
+            <% if current_user && current_user.friends.any? %>
+              <li class="nav-item <%= 'active' if request.path == friends_path %>">
+                          <%= link_to 'My Friends', friends_path, class: 'nav-link' %>
+              </li>
+            <% end %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+                Profile
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li>
+                  <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
+                   <%= fa_icon 'edit' %> Edit profile
+                  <% end %>
+                </li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -23,9 +32,20 @@
             
           </ul>
           <ul class='navbar-nav ml-auto m-2'>
+            <li class="nav-item name">
+              <% if current_user && current_user.first_name? %>
+              <%= fa_icon 'user-circle-o' %> <%= "#{current_user.first_name} #{current_user.last_name}" %>
+              <li class="nav-item">
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+            </li>
+              <% elsif current_user%>
+              <%= fa_icon 'user-circle-o' %> <%= "Anonymous" %>
+              
+            </li>
            <li class="nav-item">
               <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
             </li>
+            <% end %>
             </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

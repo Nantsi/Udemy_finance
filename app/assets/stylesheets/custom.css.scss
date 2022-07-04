@@ -1,6 +1,5 @@
 
 .navbar {
-
 background-color: #FDF6EA !important;
 margin-bottom: 1em;
 }
@@ -8,19 +7,15 @@ margin-bottom: 1em;
  
 
 .navbar-brand {
-
-font-size: 2rem;
-
+    font-size: 2rem;
 }
 
  
 .search-area {
-
-padding: 1em;
-margin-top: 6em;
-background-color: #FDF6EA !important;
-margin-bottom: 1em;
-
+    padding: 1em;
+    margin-top: 6em;
+    background-color: #FDF6EA !important;
+    margin-bottom: 1em;
 }
 
 .no-right-padding {
@@ -29,10 +24,22 @@ margin-bottom: 1em;
 
 .card {
     display: inline-block;
+    
 }
 
 .results-block {
-    
     display: inline-block;
-    
+}
+
+.name {
+    margin-right: 1em;
+    margin-top: 8px;
+}
+
+.form-group {
+    margin-top: 10px;
+}
+
+.table {
+    margin-top: 20px;
 }
